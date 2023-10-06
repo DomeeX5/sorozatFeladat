@@ -11,7 +11,11 @@ function newSeries(){
   let ujSorozat = new Sorozat(ujCim, ujEpizodszam, ujRendezonev);
   sorozatok.push(ujSorozat);
 
-  Lista.innerHTML += ujSorozat.toString();
+  Lista.innerHTML += '<li>'+ ujSorozat.toString() + '</li>';
+
+  (document.getElementById('series') as HTMLInputElement).value = "";
+  (document.getElementById('episode') as HTMLInputElement).value = "";
+  (document.getElementById('director') as HTMLInputElement).value = "";
 
   console.log(sorozatok);
 }
