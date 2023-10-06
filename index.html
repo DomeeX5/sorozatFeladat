@@ -4,21 +4,44 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Sorozat</title>
+    
   </head>
   <body>
-    A sorozat címe:
-    <input type="text" id="series"><br>
-    Epizódok száma: 
-    <input type="number" id="episode"><br>
-    Rendező neve:
-    <input type="text" id="director"><br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          A sorozat címe:
+        </div>
+        <div class="col">
+          <input type="text" id="series">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Epizódok száma: 
+        </div>
+        <div class="col">
+          <input type="number" id="episode">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Rendező neve:
+        </div>
+        <div class="col">
+          <input type="text" id="director">
+        </div>
+      </div>
+      <button type="button" id="newSeriesButton">Beküldés</button>
+    </div>
+    
 
     <ul id="list">
       
     </ul>
 
-    <button type="button" id="newSeriesButton">Beküldés</button>
+    
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

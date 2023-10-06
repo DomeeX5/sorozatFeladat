@@ -1,4 +1,6 @@
 import { Sorozat } from "./sorozat";
+import 'bootstrap/dist/css/bootstrap.css';
+import './style.css'
 
 let sorozatok: Sorozat[] = [];
 
