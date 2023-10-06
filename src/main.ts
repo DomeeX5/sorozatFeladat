@@ -6,9 +6,12 @@ function newSeries(){
   let ujCim = (document.getElementById('series') as HTMLInputElement).value;
   let ujEpizodszam = parseInt((document.getElementById('episode') as HTMLInputElement).value);
   let ujRendezonev = (document.getElementById('director') as HTMLInputElement).value;
+  let Lista = (document.getElementById('list'))!;
 
-  let ujKonyv = new Sorozat(ujCim, ujEpizodszam, ujRendezonev);
-  sorozatok.push(ujKonyv);
+  let ujSorozat = new Sorozat(ujCim, ujEpizodszam, ujRendezonev);
+  sorozatok.push(ujSorozat);
+
+  Lista.innerHTML += ujSorozat.toString();
 
   console.log(sorozatok);
 }
