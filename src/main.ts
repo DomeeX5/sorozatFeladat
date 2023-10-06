@@ -1,25 +1,21 @@
-export class Sorozat {
-  cim: string;
-  epizodszam: number;
-  rendezo: string;
+import { Sorozat } from "./sorozat";
 
-  constructor(cim: string, epizodszam: number, rendezo: string) {
+let sorozatok: Sorozat[] = [];
 
-    if(cim.trim() == ""){
-      throw new Error('A cím nem lehet üres');
-    } else if(epizodszam <= 0){
-      throw new Error('Az epizódszám nem lehet kisebb 0-nál');
-    } else if(rendezo.trim() == ""){
-      throw new Error('A rendező neve nem lehet üres');
-    }
+function newSeries(){
+  let ujCim = (document.getElementById('series') as HTMLInputElement).value;
+  let ujEpizodszam = parseInt((document.getElementById('episode') as HTMLInputElement).value);
+  let ujRendezonev = (document.getElementById('director') as HTMLInputElement).value;
 
+  let ujKonyv = new Sorozat(ujCim, ujEpizodszam, ujRendezonev);
+  sorozatok.push(ujKonyv);
 
-    this.cim = cim;
-    this.epizodszam = epizodszam;
-    this.rendezo = rendezo;
-  }
-
-  toString(): string {
-    return this.cim + ' - ' + this.epizodszam + ' - ' + this.rendezo;
-  }
+  console.log(sorozatok);
 }
+
+function init(){
+  document.getElementById('newSeriesButton')!.addEventListener('click', newSeries)
+}
+
+
+document.addEventListener('DOMContentLoaded', init)
