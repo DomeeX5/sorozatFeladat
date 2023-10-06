@@ -7,10 +7,14 @@ export class Sorozat {
   
       if(cim.trim() == ""){
         throw new Error('A cím nem lehet üres');
-      } else if(epizodszam <= 0){
+      } else if(cim.length>20){
+        throw new Error('A cím nem lehet több 20 karakternél');
+      } else if(epizodszam <= 0 || isNaN(epizodszam)){
         throw new Error('Az epizódszám nem lehet kisebb 0-nál');
       } else if(rendezo.trim() == ""){
         throw new Error('A rendező neve nem lehet üres');
+      } else if(rendezo.length > 25){
+        throw new Error('A rendező neve nem lehet hosszabb 25 karakternél');
       }
   
   
